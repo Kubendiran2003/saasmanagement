@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 connectDB();
 
-// Enable CORS for frontend
+// Enable CORS for local + Netlify frontend
 app.use(
   cors({
-    origin: "http://localhost:5173", // React frontend URL
-    credentials: true, // Allow cookies and auth headers
+    origin: ["http://localhost:5173", "https://saas-frontend-project.netlify.app"],
+    credentials: true,
   })
 );
 
